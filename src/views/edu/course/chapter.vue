@@ -344,7 +344,7 @@ export default {
     },
     next() {
       console.log("next");
-      this.$router.push({ path: "/edu/course/publish/1" });
+      this.$router.push({ path: "/edu/course/publish/"+this.id });
     },
   },
 };
