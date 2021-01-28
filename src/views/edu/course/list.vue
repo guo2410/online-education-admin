@@ -48,6 +48,7 @@
         </el-select>
       </el-form-item>
 
+
       <el-button type="primary" icon="el-icon-search" @click="fetchData()"
         >查询</el-button
       >
@@ -69,7 +70,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="课程信息" width="470" align="center">
+      <el-table-column label="课程信息" width="370" align="center">
         <template slot-scope="scope">
           <div class="info">
             <div class="pic">
@@ -100,6 +101,20 @@
               ? "免费"
               : "¥" + scope.row.price.toFixed(2)
           }}
+        </template>
+      </el-table-column>
+      
+      <el-table-column
+        prop="status"
+        label="课程状态"
+        width="100"
+        align="center"
+      >
+        <template slot-scope="scope">
+          <el-tag
+            :type="scope.row.status === 'Draft' ? 'primary' : 'success'"
+            >{{ scope.row.status === "Draft" ? "未发布" : "已发布" }}</el-tag
+          >
         </template>
       </el-table-column>
       <el-table-column
@@ -274,7 +289,7 @@ export default {
 }
 .myClassList td .info .title {
   width: 280px;
-  float: right;
+  float: left;
   height: 90px;
 }
 .myClassList td .info .title a {

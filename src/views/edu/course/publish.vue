@@ -69,7 +69,7 @@ export default {
     },
     publish() {
       console.log("publish");
-      course.publishCourse(this.courseId).then((response) => {
+      course.publishCourse(this.id).then((response) => {
         this.$router.push({ path: "/edu/course/list" });
       });
     },
