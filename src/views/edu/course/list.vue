@@ -230,7 +230,7 @@ export default {
         type: "warning",
       })
         .then(() => {
-          course.removeById(id);
+          return course.removeById(id);
         })
         .then(() => {
           this.fetchData();

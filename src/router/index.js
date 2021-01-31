@@ -134,24 +134,26 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/example',
+    path: '/statistics/daily',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/statistics/daily/create',
+    name: 'Statistics',
+    meta: { title: '统计分析', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'create',
+        name: 'StatisticsDailyCreate',
+        component: () => import('@/views/statistics/daily/create'),
+        meta: { title: '生成统计',icon:'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
+      
+         path: 'chart',
+         name: 'StatisticsDayChart',
+         component: () => import('@/views/statistics/daily/chart'),
+         meta: { title: '统计图表',icon:'tree' }
+      
+        }  
     ]
   },
 
